@@ -1,0 +1,79 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 6-fa1285188035
+Exec   : blockMesh
+Date   : May 29 2021
+Time   : 12:00:17
+Host   : "VirtualBox"
+PID    : 11362
+I/O    : uncollated
+Case   : /home/ofoam/OpenFOAM/ofoam-6/project/openfoam_cavitation/simpleCavitation
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Deleting polyMesh directory
+    "/home/ofoam/OpenFOAM/ofoam-6/project/openfoam_cavitation/simpleCavitation/constant/polyMesh"
+Creating block mesh from
+    "/home/ofoam/OpenFOAM/ofoam-6/project/openfoam_cavitation/simpleCavitation/system/blockMeshDict"
+Creating block edges
+No non-planar block faces defined
+Creating topology blocks
+Creating topology patches
+
+Creating block mesh topology
+
+Check topology
+
+	Basic statistics
+		Number of internal faces : 0
+		Number of boundary faces : 6
+		Number of defined boundary faces : 6
+		Number of undefined boundary faces : 0
+	Checking patch -> block consistency
+
+Creating block offsets
+Creating merge list .
+
+Creating polyMesh from blockMesh
+Creating patches
+Creating cells
+Creating points with scale 1
+    Block 0 cell size :
+        i : 0 .. 0
+        j : 0.01 .. 0.01
+        k : 0.0180002 .. 0.0180002
+
+
+There are no merge patch pairs edges
+
+Writing polyMesh
+----------------
+Mesh Information
+----------------
+  boundingBox: (-0.00414 0 0) (0.00414 0.2 0.9)
+  nPoints: 2121
+  nCells: 1000
+  nFaces: 4050
+  nInternalFaces: 1930
+----------------
+Patches
+----------------
+  patch 0 (start: 1930 size: 50) name: inlet
+  patch 1 (start: 1980 size: 50) name: outlet
+  patch 2 (start: 2030 size: 20) name: wall
+  patch 3 (start: 2050 size: 0) name: axis
+  patch 4 (start: 2050 size: 1000) name: wedgePatch1
+  patch 5 (start: 3050 size: 1000) name: wedgePatch2
+
+End
+

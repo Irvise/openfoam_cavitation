@@ -1,0 +1,111 @@
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "";
+    case            "defective cooler";
+    instance        "system";
+    local           "";
+
+    class           dictionary;
+    object          funkySetFieldsDict;
+}
+
+expressions
+(
+	ambientFluidp
+	{
+		field p;
+		expression	"1"; //To complete
+		keepPatches false;
+	}
+	ambientFluidU
+	{
+		field U;
+		expression	"vector(1,1,1)"; //To complete
+		keepPatches false;
+	}
+	ambientFluidalpha.vapour
+	{
+		field alpha.vapour;
+		expression	"1"; //To complete
+		keepPatches false;
+	}
+	ambientFluidk
+	{
+		field k;
+		expression	"1"; //To complete
+		keepPatches false;
+	}
+	ambientFluidomega
+	{
+		field omega;
+		expression	"1"; //To complete
+		keepPatches false;
+	}
+	ambientFluidrho
+	{
+		field rho;
+		expression	"1"; //To complete
+		keepPatches false;
+    }
+	ambientFluidnut
+	{
+		field nut;
+		expression	"1"; //To complete
+		keepPatches false;
+    }
+
+	bubblep
+	{
+		field p;
+		expression	"0.8"; //To complete
+		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		keepPatches true;
+    }
+	bubbleU
+	{
+		field U;
+		expression	"vector(0.8,0.8,0.8)"; //To complete
+		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		keepPatches true; 
+    }
+	bubblealpha.vapour
+	{ 	
+		field alpha.vapour;
+		expression	"0.8"; //To complete
+		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		keepPatches true; 
+    }
+	bubblek
+	{
+		field k;
+		expression	"0.8"; //To complete
+		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		keepPatches true; 
+    }
+	bubbleomega
+	{		
+		field omega;
+		expression	"0.8"; //To complete
+		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		keepPatches true;
+    }
+	bubblerho
+	{
+		field rho;
+		expression	"0.8"; //To complete
+		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		keepPatches true;   	
+
+	}
+	bubblenut
+	{
+		field nut;
+		expression	"0.8"; //To complete
+		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		keepPatches true;   	
+
+	}
+);
