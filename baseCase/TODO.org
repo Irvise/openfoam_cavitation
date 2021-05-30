@@ -5,4 +5,19 @@
 	- What values do we use?
   - Check the transport properties. The skeleton is already there
 	- Suit them to our case. We could use CoolPROP to calculate the exact values.
-  - 
+  - Initial conditions?
+	- What do we use for initial pressure?
+	- And densisty? For liquid watter, 1000kg/m3 should be good enough.
+  - Refine the size of the problem and the bubble
+
+	  
+* Information on the decissions taken
+
+** Initial boundary conditions
+   - The velocity is 0, we start from an "equilibrium"
+   - The alpha of the liquid is 0, 1 for the bubble
+   - The k value at t=0 is 0, since the U_avg is also 0 (we do not have turbulence at the beginning anywhere
+   - Since k at t=0 is also 0, the values for epsilon, omega and nut are also 0
+   - For the time being, the pressure for the bubble is going to be 0
+   - For the time being the density for the liquid is set to 1000
+
