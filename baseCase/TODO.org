@@ -1,0 +1,8 @@
+* TODO In no particular order
+  - Fine-tune or defend the turbulence model that is going to be used.
+  - Configure the barotropic model.
+	- What type do we use? At the beginning just go with Linear
+	- What values do we use?
+  - Check the transport properties. The skeleton is already there
+	- Suit them to our case. We could use CoolPROP to calculate the exact values.
+  - 

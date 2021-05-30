@@ -1,6 +1,9 @@
 log.*
 
+**/#*
 **/*~
+
+**/polyMesh
 
 postProcessing/data/data 
 postProcessing/graphic
