@@ -1,9 +1,22 @@
+# Log files
 log.*
 
+# Emacs files
 **/#*
 **/*~
 
+# Geometry files
 **/polyMesh
 
+# Postprocessing files
 postProcessing/data/data 
 postProcessing/graphic
+
+# Initical condition files. We only want the original, we do not care about the funky generated files
+**/0/U
+**/0/alpha.vapour
+**/0/k
+**/0/nut
+**/0/omega
+**/0/p
+**/0/rho
