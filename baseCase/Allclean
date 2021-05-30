@@ -9,4 +9,6 @@ rm -rf 0/polyMesh > /dev/null 2>&1
 rm system/topoSetDict > /dev/null 2>&1
 cleanCase
 
+# Clean non orignial files
+find 0/ -type f -not -name '*origin' -print0 | xargs -0 rm
 #------------------------------------------------------------------------------
