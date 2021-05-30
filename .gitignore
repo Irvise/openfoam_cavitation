@@ -1,0 +1,6 @@
+log.*
+
+**/*~
+
+postProcessing/data/data 
+postProcessing/graphic
