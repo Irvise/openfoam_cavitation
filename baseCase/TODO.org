@@ -27,6 +27,7 @@ Answers Ivan 31.05.2021
 		-i asume we should calculate the pressure using the barotropic Compressibility model
 		website(where i got the equation):
 		https://caefn.com/openfoam/solvers-cavitatingfoam-v1812-barotropiccompressibilitymodel
+		see figure inside figures folder
 	
 		using the equation which i sent you in whatsapp we should by abel to calculate the right values.
 
