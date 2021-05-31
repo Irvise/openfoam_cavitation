@@ -1,14 +1,14 @@
 * TODO In no particular order
-  - Fine-tune or defend the turbulence model that is going to be used.
-  - Configure the barotropic model.
-	- What type do we use? At the beginning just go with Linear
-	- What values do we use?
-  - Check the transport properties. The skeleton is already there
-	- Suit them to our case. We could use CoolPROP to calculate the exact values.
-  - Initial conditions?
-	- What do we use for initial pressure?
-	- And densisty? For liquid watter, 1000kg/m3 should be good enough.
-  - Refine the size of the problem and the bubble
+  1. Fine-tune or defend the turbulence model that is going to be used.
+  2. Configure the barotropic model.
+	a. What type do we use? At the beginning just go with Linear
+	b. What values do we use?
+  3. Check the transport properties. The skeleton is already there
+	 Suit them to our case. We could use CoolPROP to calculate the exact values.
+  4. Initial conditions?
+	a What do we use for initial pressure?				
+	b And densisty? For liquid watter, 1000kg/m3 should be good enough.
+  5. Refine the size of the problem and the bubble
 
 	  
 * Information on the decissions taken
@@ -21,3 +21,19 @@
    - For the time being, the pressure for the bubble is going to be 0
    - For the time being the density for the liquid is set to 1000
 
+Answers Ivan 31.05.2021
+ 
+	4a)	
+		-i asume we should calculate the pressure using the barotropic Compressibility model
+		website(where i got the equation):
+		https://caefn.com/openfoam/solvers-cavitatingfoam-v1812-barotropiccompressibilitymodel
+	
+		using the equation which i sent you in whatsapp we should by abel to calculate the right values.
+
+	 b) if we assume isentropic phase change(during the initialization of the bubble), for standard Temeperature of 273.15 K
+		the density would by 0.485 kg/ m³ (the calculated Presure should result ~ 6000 Pa (0.6kPa) . (approximatly).
+
+	1) & 5) i could do that if you could provide the DOI of the papaer which you mentioned is used also inside the lecture script
+   
+
+	 
