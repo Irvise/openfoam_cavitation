@@ -21,7 +21,8 @@
    - For the time being, the pressure for the bubble is going to be 0
    - For the time being the density for the liquid is set to 1000
 
-Answers Ivan 31.05.2021
+
+	Comments Ivan 31.05.2021
  
 	4a)	
 		-i asume we should calculate the pressure using the barotropic Compressibility model
@@ -34,7 +35,19 @@ Answers Ivan 31.05.2021
 	 b) if we assume isentropic phase change(during the initialization of the bubble), for standard Temeperature of 273.15 K
 		the density would by 0.485 kg/ m³ (the calculated Presure should result ~ 6000 Pa (0.6kPa) . (approximatly).
 
+	PHD-Thesis: 
+	A Computational Study of the Inertial Collapse of Gas Bubbles Near a Rigid Surface by Shahaboddin Alahyari Beig
+
+	Based on the PHD-Tesis set up the following parameter:
+	
+ 	R0 = 100mym = 100*e-6 	m
+	~ we can disscuss the sourounding pressure value
+	p0 = 5 MPa  = 5*e6 		Pa
+
+	numberofcells/initialbubbleRadius = 192, ~for the Thesis this resultet in approx 0.5 billiion cells	
+
+	
 	1) & 5) i could do that if you could provide the DOI of the papaer which you mentioned is used also inside the lecture script
    
-
+	
 	 
