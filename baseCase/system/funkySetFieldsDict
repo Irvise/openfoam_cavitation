@@ -17,7 +17,7 @@ expressions
 	ambientFluidp
 	{
 		field p;
-		expression	"10000"; // TODO
+		expression	"100000"; // 100_000 [Pa]
 		keepPatches false;
 	}
 	ambientFluidU
@@ -47,7 +47,7 @@ expressions
 	ambientFluidrho
 	{
 		field rho;
-		expression	"1000"; //To complete
+		expression	"997.2987703166269"; // Rho at 100_000 [Pa] and T at 297.15 [K]
 		keepPatches false;
     }
 	ambientFluidnut
@@ -60,7 +60,7 @@ expressions
 	bubblep
 	{
 		field p;
-		expression	"0";
+		expression	"2000"; // 2000 [Pa]
 		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
 		keepPatches true;
     }
@@ -95,7 +95,7 @@ expressions
 	bubblerho
 	{
 		field rho;
-		expression	"0"; // TODO
+		expression	"0.014598794912239475"; // Rho at 2000 [Pa] and T at 297.15 [K]
 		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
 		keepPatches true;   	
 
