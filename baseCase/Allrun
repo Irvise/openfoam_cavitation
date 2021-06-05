@@ -11,6 +11,6 @@ application=$(getApplication)
 runApplication blockMesh 
 funkySetFields -time 0
 
-runApplication $application
+#runApplication $application
 
 #------------------------------------------------------------------------------

@@ -12,10 +12,24 @@ FoamFile
     object          funkySetFieldsDict;
 }
 
+defaultVariables
+(
+    "bubbleRadius=5e-2;"
+    "xPositionCenterPoint=0;"
+    "yPositionCenterPoint=1e-1;"
+    "zPositionCenterPoint=0;"
+);
+
+
 expressions
 (
+//Definition of the variables 
+
+
+
 	ambientFluidp
 	{
+	
 		field p;
 		expression	"100000"; // 100_000 [Pa]
 		keepPatches false;
@@ -46,65 +60,86 @@ expressions
 	}
 	ambientFluidrho
 	{
+
 		field rho;
 		expression	"997.2987703166269"; // Rho at 100_000 [Pa] and T at 297.15 [K]
 		keepPatches false;
-    }
+    	}
 	ambientFluidnut
 	{
 		field nut;
 		expression	"0";
 		keepPatches false;
-    }
+    	}
 
 	bubblep
 	{
+		// import variables 
+		variables $defaultVariables;	
+		//setFields part	
 		field p;
 		expression	"2000"; // 2000 [Pa]
-		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
 		keepPatches true;
-    }
+    	}
 	bubbleU
-	{
+	{	
+		// import variables 
+		variables $defaultVariables;	
+		//setFields part
 		field U;
 		expression	"vector(0, 0, 0)";
-		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
 		keepPatches true; 
-    }
+    	}
 	bubblealpha.vapour
 	{ 	
+		// import variables 
+		variables $defaultVariables;	
+		//setFields part
 		field alpha.vapour;
 		expression	"1";
-		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
 		keepPatches true; 
-    }
+    	}
 	bubblek
 	{
+		// import variables 
+		variables $defaultVariables;	
+		//setFields part
 		field k;
 		expression	"0";
-		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
 		keepPatches true; 
-    }
+    	}
 	bubbleomega
-	{		
+	{	
+		// import variables 
+		variables $defaultVariables;	
+		//setFields part
 		field omega;
 		expression	"0";
-		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
 		keepPatches true;
-    }
+    	}	
 	bubblerho
-	{
+	{	
+		// import variables 
+		variables $defaultVariables;	
+		//setFields part
 		field rho;
 		expression	"0.014598794912239475"; // Rho at 2000 [Pa] and T at 297.15 [K]
-		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
 		keepPatches true;   	
 
 	}
 	bubblenut
-	{
+	{	// import variables 
+		variables $defaultVariables;	
+		//setFields part
 		field nut;
 		expression	"0";
-		condition "pow(pos().x,2) + pow(pos().y-0.1,2) + pow(pos().z-0,2)-pow(5e-2,2) < 0" ;
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
 		keepPatches true;   	
 
 	}
