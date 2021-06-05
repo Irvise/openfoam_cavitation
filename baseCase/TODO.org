@@ -18,9 +18,11 @@
    - The alpha of the liquid is 0, 1 for the bubble
    - The k value at t=0 is 0, since the U_avg is also 0 (we do not have turbulence at the beginning anywhere
    - Since k at t=0 is also 0, the values for epsilon, omega and nut are also 0
-   - For the time being, the pressure for the bubble is going to be 0
-   - For the time being the density for the liquid is set to 1000
-
+#   - For the time being, the pressure for the bubble is going to be 0
+#   - For the time being the density for the liquid is set to 1000
+   - The initial Pressure and Temperature for the liquid are 100_000 [Pa] and 293 [K]
+   - The initial pressure for the bubble will be 2000 [Pa]
+   - The properties for the fluids are taken from the values above
 
 	Comments Ivan 31.05.2021
  
