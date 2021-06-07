@@ -16,7 +16,7 @@ FoamFile
 
 dimensions      [1 -1 -2 0 0];
 
-internalField   uniform 300e5;
+internalField   uniform 100000; // 100_000 [Pa], but it is irrelevant, see funky
 
 boundaryField
 {
