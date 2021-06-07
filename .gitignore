@@ -23,3 +23,7 @@ postProcessing/graphic
 
 # Timestep files
 **/0.*
+
+# tar.gz Files 
+**/*tar.gz 
+

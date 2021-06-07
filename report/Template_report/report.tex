@@ -1,0 +1,250 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Stylish Article
+% LaTeX Template
+% Version 1.0 (31/1/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Mathias Legrand (legrand.mathias@gmail.com)
+%
+% Modified by:
+% Camilo Silva (kamilosilva@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[fleqn,12pt]{NTFD} % Document font size and equations flushed left
+
+\setlength{\columnsep}{0.55cm} % Distance between the two columns of text
+\setlength{\fboxrule}{0.75pt} % Width of the border around the abstract
+
+\definecolor{color1}{RGB}{0,0,90} % Color of the article title and sections
+\definecolor{color2}{RGB}{0,20,20} % Color of the boxes behind the abstract and headings
+
+\newlength{\tocsep} 
+\setlength\tocsep{1.5pc} % Sets the indentation of the sections in the table of contents
+\setcounter{tocdepth}{3} % Show only three levels in the table of contents section: sections, subsections and subsubsections
+
+
+
+\usepackage{lipsum} % Required to insert dummy text
+\usepackage{setspace} % To add space between lines
+\onehalfspacing
+\linespread{1.1}
+
+\usepackage{fourier}
+\usepackage[T1]{fontenc}
+
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\Archive{Winter Semester 2018-2019} % Period of course
+
+\PaperTitle{Title of the project} % Article title
+
+\Authors{Juan Perez\textsuperscript{1}*, Wolfgang Schroeder\textsuperscript{2}} % Authors
+\affiliation{\textsuperscript{1}\textit{Exchange student, UNAM, Mexico DF, Mexico}} % Author affiliation
+\affiliation{\textsuperscript{2}\textit{Master Student, TUM, Munich, Germany}} % Author affiliation
+\affiliation{*\textbf{e-mails}: perez@gmail.com,\  schroeder@td.mw.tum.de} % Corresponding author
+
+\Keywords{Keyword1 --- Keyword2 --- Keyword3} % Keywords - if you don't want any simply remove all the text between the curly brackets
+\newcommand{\keywordname}{Keywords} % Defines the keywords heading name
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+%\Abstract{\lipsum[1]~}
+\Abstract{ The abstract must give the reader a quick overview of what is happening in the article (or report). It could be divided in: 1) Describe the problem (atmosphere, airfoils, heat transport, etc); 2) description of the methodology used (Model and equations used) 3) Quick summary of results. 12 lines in total should be ok. The following is just dummy letters ...
+\lipsum[1]~}
+
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{titlepage}
+
+\begin{figure}
+\includegraphics[width=2cm]{./Logo.pdf}
+\end{figure}
+
+\end{titlepage}
+
+
+\flushbottom % Makes all text pages the same height
+
+\maketitle % Print the title and abstract box
+
+\newpage
+
+\tableofcontents % Print the contents section
+
+\thispagestyle{empty} % Removes page numbering from the first page
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introduction} % The \section*{} command stops section numbering
+
+%\addcontentsline{toc}{section}{\hspace*{-\tocsep}Introduction} % Adds this section to the table of contents with negative horizontal space equal to the indent for the numbered sections
+
+The introduction gives the reader the background of the phenomenon under study. It should contain: 1) Description of the problem (combustion noise that need to be regulated, many tsunamies that have taken place lately and have destroy towns, combustion instabilities may destroy engines); 2) Physical description (without too much mathematics) of the phenomenon (what is noise?, what is actually a tsunami?, what is a combustion instability?) 3) Description of the methods that have been proposed until know to solve that problem  \cite{Figueredo:2009dg}( addition of acoustic damping, addition of barriers in coasts, experimental investigation of geometries); 4) Overview of the method that is proposed in the present work (addition of Helmholtz cavities, prediction of waves by understanding the generation of tsunamies, solve the Helmholtz equation); 5) One short paragraph describing how the article (or report) is organized.
+
+\lipsum[1-3] % Dummy text
+
+%------------------------------------------------
+
+\section{Configuration under study}
+
+
+Most of the time a specific case is under study (swirled combustor with two stages, the coast of Solomon islands in the pacific, the rocket Arien 5 by esa) and for given reasons must  be introduced before the model. In such a case the present section may be added. If it is not necessary to introduce the configuration before the model, the description could be added as a subsection in the section `Results and discussion'. In this section  the addition of figures describing the configuration is fundamental. Other figures may also be added as shown in Fig.~\ref{fig:view}. 
+
+\begin{figure*}[ht]\centering % Using \begin{figure*} makes the figure take up the entire width of the page
+\includegraphics[width=\linewidth]{./imagen1.pdf}
+\caption{Wide Picture}
+\label{fig:view}
+\end{figure*}
+
+
+
+\section{Name of the method (model) proposed}
+
+The method is now proposed. The corresponding model may be derived from given fundamental laws (fundamental equations). Here is where you can have fun writing equations while explaining the physical meaning of them. Note that at a given mathematical expression (equation) is mentioned as `Eq.' if  presented in the middle of the text or as `Equation' if starting a sentence. In this case, a transport relation is expressed in Eq.~\eqref{eq:conserv} as follows: 
+
+\begin{equation}
+\frac{\partial}{\partial t} \left( \rho \phi\right) + \nabla \cdot\ \left( \boldsymbol{v}  \ \rho\phi \right) -  \nabla \cdot\ \left( \mathcal{D}\rho  \nabla \phi \right)  =  s .
+\label{eq:conserv}
+\end{equation}
+
+When writing equations and variables do not forget to give the name to the new quantities introduced. Do not assume that the reader will understand automatically that $\rho$ is density ... it could be also spectral radius, oder?. 
+
+
+\lipsum[4] % Dummy text
+
+
+
+\lipsum[5] % Dummy text
+
+\begin{enumerate}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
+\item First item in a list
+\item Second item in a list
+\item Third item in a list
+\end{enumerate}
+
+\subsection{Subsection}
+
+\lipsum[6] % Dummy text
+
+\paragraph{Paragraph} \lipsum[7] % Dummy text
+\paragraph{Paragraph} \lipsum[8] % Dummy text
+
+\subsection{Subsection}
+
+\lipsum[9] % Dummy text
+
+
+
+%------------------------------------------------
+
+\section{Results and Discussion}
+
+This section is the {\it climax} of the report. The reader should be now getting super excited to know the results ... so don't be mean and please him/her. It is like a peace of music where the audience is waiting crazily to the `solo' of `chorus' part. This section should be carefully written so that the audience like you.
+
+Results may contain tables like Table.~\ref{tab:label} and graphs with curves like Fig.~\ref{fig:results} showing how a given quantity varies depending on the change of given conditions (lift vs angle of attack, frequency of resonance vs length of the combustion chamber). If necessary, also snapshots should be shown to `picture' the evolution of the flow under a given period of time or a cycle (convection of heat by the turbulent flow, acoustic mode of a cavity, wake downstream of an airfoil). It is mandatory that ALL figures inserted are explained, commented or at least mentioned in the text.
+
+\begin{figure}[tb]
+\centering
+\begin{tabular}{cc}
+\includegraphics[width=0.5\textwidth,angle=0]{./results} & \includegraphics[width=0.5\textwidth,angle=0]{./results} \\
+(a) & (b)
+\end{tabular}
+\caption{Ilustration of two type of  phenomena (note that axis labels in this figure are too small. This is actually a counter-example). (a) toto1 (b) toto2 .}
+\label{fig:results}
+\end{figure}
+
+
+\lipsum[10] % Dummy text
+
+\subsection{Subsection}
+
+\lipsum[11] % Dummy text
+
+\begin{table}[hbt]
+\caption{Table of Grades}
+\centering
+\begin{tabular}{llr}
+\toprule
+\multicolumn{2}{c}{Name} \\
+\cmidrule(r){1-2}
+First name & Last Name & Grade \\
+\midrule
+John & Doe & $7.5$ \\
+Richard & Miles & $2$ \\
+\bottomrule
+\end{tabular}
+\label{tab:label}
+\end{table}
+
+\subsubsection{Subsubsection}
+
+\lipsum[12] % Dummy text
+
+\begin{description}
+\item[Word] Definition
+\item[Concept] Explanation
+\item[Idea] Text
+\end{description}
+
+\subsubsection{Subsubsection}
+
+\lipsum[13] % Dummy text
+
+\begin{itemize}[noitemsep] % [noitemsep] removes whitespace between the items for a compact look
+\item First item in a list
+\item Second item in a list
+\item Third item in a list
+\end{itemize}
+
+\subsubsection{Subsubsection}
+
+\lipsum[14] % Dummy text
+
+\subsection{Subsection}
+
+\lipsum[15-23] % Dummy text
+
+%------------------------------------------------
+
+\section{Conclusions} % The \section*{} command stops section numbering
+
+Here a point should be clarified: the conclusions have been already stated little by little in the previous section. The main purpose of the `Conclusions' section is only to repeat (summarize) the ideas/statements that were written in a spread way previously. This section should be super clear. Some times readers just start from the conclusions ... if conclusions are not interesting or confusing they just can just let aside your amazing work!! (cry!).
+
+
+\section*{Acknowledgments} % The \section*{} command stops section numbering
+
+\addcontentsline{toc}{section}{\hspace*{-\tocsep}Acknowledgments} % Adds this section to the table of contents with negative horizontal space equal to the indent for the numbered sections
+
+Thank you God, Ala, your mom, your girlfriend/boyfriend, the guy who is giving you money, discovery channel, mythbusters, breaking bad , me (happy face) or yourself for the achievements in this work. Otherwise, remove this section.
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\bibliographystyle{unsrt}
+\bibliography{sample}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
