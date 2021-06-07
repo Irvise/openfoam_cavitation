@@ -23,7 +23,17 @@ postProcessing/graphic
 
 # Timestep files
 **/0.*
-
+ 
 # tar.gz Files 
 **/*tar.gz 
 
+ 
+# Compressed files
+*.tar.gz
+
+# Temporaries
+*.swp
+
+# Processor partitions
+**/processor
+ 
