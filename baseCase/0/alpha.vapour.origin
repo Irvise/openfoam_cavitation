@@ -16,26 +16,29 @@ FoamFile
 
 dimensions      [0 0 0 0 0];
 
-internalField   uniform 0;
+internalField   uniform 0; // Irrelevant since it is initialized with Funky
 
 boundaryField
 {
     inlet
     {
-        type            calculated;
-        value           uniform 0;
+        // type            calculated;
+        // value           uniform 0;
+      type zeroGradient; // Free stream conditions.
     }
 
     outlet
     {
-        type            calculated;
-        value           uniform 0;
+        // type            calculated;
+        // value           uniform 0;
+      type zeroGradient; // Free stream conditions.
     }
 
     wall
     {
-        type            calculated;
-        value           uniform 0;
+        // type            calculated;
+        // value           uniform 0;
+      type zeroGradient; // Free stream conditions.
     }
 
     axis
