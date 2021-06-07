@@ -23,20 +23,23 @@ boundaryField
 {
     inlet
     {
-        type            calculated;
-        value           uniform 0;
+        // type            calculated;
+        // value           uniform 0;
+      type zeroGradient; // Free stream
     }
 
     outlet
     {
-        type            calculated;
-        value           uniform 0;
+        // type            calculated;
+        // value           uniform 0;
+      type zeroGradient; // Free stream
     }
 
     wall
     {
-        type            calculated;
-        value           uniform 0;
+        // type            calculated;
+        // value           uniform 0;
+      type zeroGradient; // Free stream
     }
 
     axis
