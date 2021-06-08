@@ -21,4 +21,9 @@ OF60
 # Change the current directory to the case directory
 cd /nfs/home/ofoam/OpenFOAM/projectSimulation
 # Execute interFoam on the current case directory
+
+blockMesh>log.blockMesh
+funkySetFields -time 0
+decomposePar
 mpiexec cavitatingFoam -parallel > log.cavitatingFoam
+reconstructPar

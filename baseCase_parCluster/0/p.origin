@@ -16,22 +16,24 @@ FoamFile
 
 dimensions      [1 -1 -2 0 0];
 
-internalField   uniform 300e5;
+internalField   uniform 100000; // 100_000 [Pa], but it is irrelevant, see funky
 
 boundaryField
 {
  
 	inlet
 	{
-        type            totalPressure;
-        p0              uniform 300e5;
+	  type zeroGradient; // Free stream condition
+        // type            totalPressure;
+        // p0              uniform 300e5;
 
 	} 	
 
 	outlet
 	{
-        type            fixedValue;
-        value           uniform 100e5;
+	  type zeroGradient; // Free stream condition
+        // type            fixedValue;
+        // value           uniform 100e5;
 	} 	
 
 	wall

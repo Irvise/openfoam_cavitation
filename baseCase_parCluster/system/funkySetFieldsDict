@@ -32,44 +32,44 @@ expressions
 	
 		field p;
 		expression	"100000"; // 100_000 [Pa]
-		keepPatches false;
+		keepPatches true;
 	}
 	ambientFluidU
 	{
 		field U;
 		expression	"vector(0, 0, 0)";
-		keepPatches false;
+		keepPatches true;
 	}
 	ambientFluidalpha.vapour
 	{
 		field alpha.vapour;
 		expression	"0";
-		keepPatches false;
+		keepPatches true;
 	}
 	ambientFluidk
 	{
 		field k;
 		expression	"0";
-		keepPatches false;
+		keepPatches true;
 	}
 	ambientFluidomega
 	{
 		field omega;
 		expression	"0";
-		keepPatches false;
+		keepPatches true;
 	}
 	ambientFluidrho
 	{
 
 		field rho;
 		expression	"997.2987703166269"; // Rho at 100_000 [Pa] and T at 297.15 [K]
-		keepPatches false;
+		keepPatches true;
     	}
 	ambientFluidnut
 	{
 		field nut;
 		expression	"0";
-		keepPatches false;
+		keepPatches true;
     	}
 
 	bubblep

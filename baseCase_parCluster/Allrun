@@ -10,7 +10,9 @@ application=$(getApplication)
 
 runApplication blockMesh 
 funkySetFields -time 0
-decomposePar
-#runApplication $application
 
+runApplication $application
+postProcess -func singleGraph-center
+postProcess -func singleGraph-west
+postProcess -func singleGraph-east
 #------------------------------------------------------------------------------

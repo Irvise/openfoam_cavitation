@@ -22,20 +22,20 @@ boundaryField
 {
     inlet
     {
-        type	zeroGradient;
+        type	zeroGradient; // In this baseCase it is a freestream patch
         value	uniform (0 0 0);
     }
 
     outlet
     {
-        type	zeroGradient;
+        type	zeroGradient; // In this baseCase it is a freestream patch
         value	uniform (0 0 0);
     }
 
     wall
     {
-		type 	fixedValue; 
-		value	uniform (0 0 0);
+	type 	zeroGradient; // This patch is the "cylinder", in our case it is not a wall
+	value	uniform (0 0 0);
     }
 
     axis

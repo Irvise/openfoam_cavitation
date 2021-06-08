@@ -17,15 +17,16 @@ FoamFile
 
 dimensions      [0 2 -2 0 0 0 0];
 
-internalField   uniform 10;
+internalField   uniform 0; // The fluid is at stand still
 
 boundaryField
 {
     inlet
     {
-        type            turbulentIntensityKineticEnergyInlet;
-        intensity       0.05;
-        value           uniform 0.05;
+      type zeroGradient; // Free stream condition, static case.
+        // type            turbulentIntensityKineticEnergyInlet;
+        // intensity       0.05;
+        // value           uniform 0.05;
     }
 
     outlet
@@ -36,8 +37,9 @@ boundaryField
 
     wall
     {
-        type            kqRWallFunction;
-        value           uniform 10;
+      type zeroGradient; // Free stream condition, static case.
+        // type            kqRWallFunction;
+        // value           uniform 10;
     }
 
     axis

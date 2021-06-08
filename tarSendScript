@@ -1,0 +1,2 @@
+tar -czf baseCase_parCluster.tar.gz baseCase_parCluster 
+scp baseCase_parCluster.tar.gz ofoam3@129.187.69.163:/nfs/home/ofoam3/OpenFOAM 
