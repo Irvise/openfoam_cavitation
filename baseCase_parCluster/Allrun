@@ -11,8 +11,8 @@ application=$(getApplication)
 runApplication blockMesh 
 funkySetFields -time 0
 
-runApplication $application
-postProcess -func singleGraph-center
-postProcess -func singleGraph-west
-postProcess -func singleGraph-east
+#runApplication $application
+#postProcess -func singleGraph-center
+#postProcess -func singleGraph-west
+#postProcess -func singleGraph-east
 #------------------------------------------------------------------------------

@@ -5,10 +5,10 @@
 #
 #These commands set up the Grid Environment for your job:
 # Output folder for the journal file
-#PBS -o /nfs/home/ofoam3/OpenFOAM/projectSimulation 
+#PBS -o /nfs/home/ofoam3/OpenFOAM/baseCase_parCluster 
 #PBS -j oe
 # Name of the job
-#PBS - baseCase6Prcs 120000 cells 
+#PBS -N baseCase6Prcs 
 #PBS -q batch
 #PBS -l nodes=1:ppn=6:buddies
 # E-mail address at which notification will be sent
@@ -19,11 +19,7 @@
 source /nfs/etc/bashrc
 OF60
 # Change the current directory to the case directory
-cd /nfs/home/ofoam/OpenFOAM/projectSimulation
-# Execute interFoam on the current case directory
-
-blockMesh>log.blockMesh
-funkySetFields -time 0
-decomposePar
+cd /nfs/home/ofoam3/OpenFOAM/baseCase_parCluster
+# Execute interFoam on the current case directoryr
+touch pathiscorrect
 mpiexec cavitatingFoam -parallel > log.cavitatingFoam
-reconstructPar

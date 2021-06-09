@@ -1,0 +1,15 @@
+timestep="0.0002"
+caseName="baseCase_parCluster"
+
+rm -rf west
+rm -rf east
+rm -rf center
+
+mkdir west
+mkdir east
+mkdir center
+
+
+cp -r "../../$caseName/postProcessing/singleGraph-center/$timestep"/* ./center/
+cp -r "../../$caseName/postProcessing/singleGraph-west/$timestep"/* ./west/
+cp -r "../../$caseName/postProcessing/singleGraph-east/$timestep"/* ./east/
