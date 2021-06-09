@@ -35,7 +35,7 @@ postProcessing/graphic
 *.swp
 
 # Processor partitions
-**/processor
+**/processor*
  
 ## Core latex/pdflatex auxiliary files:
 *.aux
