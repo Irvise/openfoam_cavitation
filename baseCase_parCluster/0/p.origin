@@ -21,7 +21,7 @@ internalField   uniform 100000; // 100_000 [Pa], but it is irrelevant, see funky
 boundaryField
 {
  
-	inlet
+  /*	inlet
 	{
 	  type zeroGradient; // Free stream condition
         // type            totalPressure;
@@ -40,7 +40,29 @@ boundaryField
 	{
      	type            zeroGradient;
 	}
-
+  */
+    inlet
+    {
+      type            freestreamPressure;
+      freestreamValue uniform 1e5;
+      supersonic      false;
+      value           uniform 1e5;
+    }
+  outlet
+    {
+      type            freestreamPressure;
+      freestreamValue uniform 1e5;
+      supersonic      false;
+      value           uniform 1e5;
+    }
+  wall
+    {
+      type            freestreamPressure;
+      freestreamValue uniform 1e5;
+      supersonic      false;
+      value           uniform 1e5;
+    }
+  
 	axis
 	{
 		type empty; 

@@ -20,7 +20,40 @@ internalField   uniform (0 0 0);
 
 boundaryField
 {
+
     inlet
+      {
+	type freestream;
+	freestreamValue uniform (0 0 0);
+      }
+    outlet
+      {
+	type freestream;
+	freestreamValue uniform (0 0 0);
+      }
+    wall
+      {	
+	type freestream;
+	freestreamValue uniform (0 0 0);
+      }
+    axis
+    {
+        type            empty;
+    }
+
+    wedgePatch1
+    {
+        type            wedge;
+    }
+	
+    wedgePatch2
+    {
+        type		wedge; 
+    }
+	
+}
+  // Old setup.
+  /*  inlet
     {
         type	zeroGradient; // In this baseCase it is a freestream patch
         value	uniform (0 0 0);
@@ -37,23 +70,7 @@ boundaryField
 	type 	zeroGradient; // This patch is the "cylinder", in our case it is not a wall
 	value	uniform (0 0 0);
     }
-
-    axis
-    {
-        type            empty;
-    }
-
-    wedgePatch1
-    {
-        type            wedge;
-    }
-	
-	wedgePatch2
-	{
-		type 			wedge; 
-	}
-	
-}
+*/
 /*
 {
     inlet
