@@ -23,11 +23,11 @@ postProcessing/graphic
 
 # Timestep files
 **/0.*
-**/*e-05*
+**/*e-0*
  
 # tar.gz Files 
 **/*tar.gz 
-
+**/*.gz
  
 # Compressed files
 *.tar.gz
