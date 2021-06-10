@@ -1,4 +1,4 @@
-caseName="baseCase_parCluster"
+caseName="baseCase"
 
 
 tar -czf $caseName.tar.gz $caseName 
