@@ -10,7 +10,7 @@
 # Name of the job
 #PBS -N baseCase6Prcs 
 #PBS -q batch
-#PBS -l nodes=1:ppn=4:buddies
+#PBS -l nodes=1:ppn=6:buddies
 # E-mail address at which notification will be sent
 #PBS -M ivan.lizat@outlook.de
 #PBS -m abe
