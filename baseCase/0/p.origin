@@ -21,7 +21,8 @@ internalField   uniform 100000; // 100_000 [Pa], but it is irrelevant, see funky
 boundaryField
 {
  
-  /*	inlet
+  /* Whit zeroGradient condition
+	inlet
 	{
 	  type zeroGradient; // Free stream condition
         // type            totalPressure;
@@ -41,6 +42,8 @@ boundaryField
      	type            zeroGradient;
 	}
   */
+
+  /*
     inlet
     {
       type            freestreamPressure;
@@ -61,6 +64,26 @@ boundaryField
       freestreamValue uniform 1e5;
       supersonic      false;
       value           uniform 1e5;
+    }
+  */
+
+  inlet
+    {
+      type inletOutlet;
+      value uniform 1e5;
+      inletValue uniform 1e5;
+    }
+  outlet
+    {
+      type inletOutlet;
+      value uniform 1e5;
+      inletValue uniform 1e5;
+    }
+  wall
+    {
+      type inletOutlet;
+      value uniform 1e5;
+      inletValue uniform 1e5;
     }
   
 	axis
