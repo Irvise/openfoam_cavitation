@@ -21,20 +21,50 @@ internalField   uniform (0 0 0);
 boundaryField
 {
 
-    inlet
-      {
-	type freestream;
-	freestreamValue uniform (0 0 0);
-      }
+  /*
+    Transmissive Wave example:
+    top
+    {
+    type waveTransmissive;
+    field p;
+    phi phi;
+    rho rho;
+    psi thermo psi_0;
+    gamma 1.4;
+    fieldInf 99884.8;
+    lInf 100;
+    value uniform 99884.8;
+    }
+
+    Taken from: https://www.cfd-online.com/Forums/openfoam/145561-wavetransmissive-boundary-pressure-velocity.html
+  */
+  
+  inlet
+    {
+      type waveTransmissive;
+      gamma 1.1180345627243098; // PropsSI('C','P',100000,'Q',0,'Water') / PropsSI('Cvmass','P',100000,'Q',0,'Water')
+      phi phi;
+      rho rho;
+      psi psi;
+      fieldInf uniform (0 0 0);
+    }
     outlet
       {
-	type freestream;
-	freestreamValue uniform (0 0 0);
+      type waveTransmissive;
+      gamma 1.1180345627243098; // PropsSI('C','P',100000,'Q',0,'Water') / PropsSI('Cvmass','P',100000,'Q',0,'Water')
+      phi phi;
+      rho rho;
+      psi psi;
+      fieldInf uniform (0 0 0);
       }
     wall
       {	
-	type freestream;
-	freestreamValue uniform (0 0 0);
+      type waveTransmissive;
+      gamma 1.1180345627243098; // PropsSI('C','P',100000,'Q',0,'Water') / PropsSI('Cvmass','P',100000,'Q',0,'Water')
+      phi phi;
+      rho rho;
+      psi psi;
+      fieldInf uniform (0 0 0);
       }
     axis
     {
@@ -52,49 +82,5 @@ boundaryField
     }
 	
 }
-  // Old setup.
-  /*  inlet
-    {
-        type	zeroGradient; // In this baseCase it is a freestream patch
-        value	uniform (0 0 0);
-    }
-
-    outlet
-    {
-        type	zeroGradient; // In this baseCase it is a freestream patch
-        value	uniform (0 0 0);
-    }
-
-    wall
-    {
-	type 	zeroGradient; // This patch is the "cylinder", in our case it is not a wall
-	value	uniform (0 0 0);
-    }
-*/
-/*
-{
-    inlet
-    {
-        type            zeroGradient;
-        value           uniform (0 0 0);
-    }
-
-    outlet
-    {
-        type            zeroGradient;
-        value           uniform (0 0 0);
-    }
-
-    walls
-    {
-        type            noSlip;
-    }
-
-    frontBack
-    {
-        type            empty;
-    }
-}
-*/
 
 // ************************************************************************* //

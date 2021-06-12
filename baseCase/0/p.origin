@@ -20,70 +20,52 @@ internalField   uniform 100000; // 100_000 [Pa], but it is irrelevant, see funky
 
 boundaryField
 {
- 
-  /* Whit zeroGradient condition
-	inlet
-	{
-	  type zeroGradient; // Free stream condition
-        // type            totalPressure;
-        // p0              uniform 300e5;
-
-	} 	
-
-	outlet
-	{
-	  type zeroGradient; // Free stream condition
-        // type            fixedValue;
-        // value           uniform 100e5;
-	} 	
-
-	wall
-	{
-     	type            zeroGradient;
-	}
-  */
-
   /*
-    inlet
+    Transmissive Wave example:
+    top
     {
-      type            freestreamPressure;
-      freestreamValue uniform 1e5;
-      supersonic      false;
-      value           uniform 1e5;
+    type waveTransmissive;
+    field p;
+    phi phi;
+    rho rho;
+    psi thermo psi_0;
+    gamma 1.4;
+    fieldInf 99884.8;
+    lInf 100;
+    value uniform 99884.8;
     }
-  outlet
-    {
-      type            freestreamPressure;
-      freestreamValue uniform 1e5;
-      supersonic      false;
-      value           uniform 1e5;
-    }
-  wall
-    {
-      type            freestreamPressure;
-      freestreamValue uniform 1e5;
-      supersonic      false;
-      value           uniform 1e5;
-    }
-  */
 
+    Taken from: https://www.cfd-online.com/Forums/openfoam/145561-wavetransmissive-boundary-pressure-velocity.html
+  */
+  
   inlet
     {
-      type inletOutlet;
-      value uniform 1e5;
-      inletValue uniform 1e5;
+      type waveTransmissive;
+      gamma 1.1180345627243098; // PropsSI('C','P',100000,'Q',0,'Water') / PropsSI('Cvmass','P',100000,'Q',0,'Water')
+      phi phi;
+      rho rho;
+      psi psi;
+      fieldInf 1e5;
     }
+ 
   outlet
     {
-      type inletOutlet;
-      value uniform 1e5;
-      inletValue uniform 1e5;
+      type waveTransmissive;
+      gamma 1.1180345627243098; // PropsSI('C','P',100000,'Q',0,'Water') / PropsSI('Cvmass','P',100000,'Q',0,'Water')
+      phi phi;
+      rho rho;
+      psi psi;
+      fieldInf 1e5;
     }
+ 
   wall
     {
-      type inletOutlet;
-      value uniform 1e5;
-      inletValue uniform 1e5;
+      type waveTransmissive;
+      gamma 1.1180345627243098; // PropsSI('C','P',100000,'Q',0,'Water') / PropsSI('Cvmass','P',100000,'Q',0,'Water')
+      phi phi;
+      rho rho;
+      psi psi;
+      fieldInf 1e5;
     }
   
 	axis
@@ -105,29 +87,5 @@ boundaryField
 	}
 
 }
-/*
-{
-    inlet
-    {
-        type            totalPressure;
-        p0              uniform 300e5;
-    }
 
-    outlet
-    {
-        type            fixedValue;
-        value           uniform 100e5;
-    }
-
-    walls
-    {
-        type            zeroGradient;
-    }
-
-    frontBack
-    {
-        type            empty;
-    }
-}
-*/
 // ************************************************************************* //
