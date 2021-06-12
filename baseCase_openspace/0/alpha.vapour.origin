@@ -20,69 +20,33 @@ internalField   uniform 0; // Irrelevant since it is initialized with Funky
 
 boundaryField
 {
-    inlet
+  environment
     {
-        // type            calculated;
-        // value           uniform 0;
-      type zeroGradient; // Free stream conditions.
+      type fixedValue;
+      value uniform 0;
     }
 
-    outlet
+  symmetric
     {
-        // type            calculated;
-        // value           uniform 0;
-      type zeroGradient; // Free stream conditions.
+      type symmetry;
     }
 
-    wall
+  axis
     {
-        // type            calculated;
-        // value           uniform 0;
-      type zeroGradient; // Free stream conditions.
+      type            empty;
     }
 
-    axis
+  wedgePatch1
     {
-        type            empty;
-    }
-
-    wedgePatch1
-    {
-        type            wedge;
+      type            wedge;
     }
 	
-	wedgePatch2
-	{
-		type 			wedge; 
-	}
+  wedgePatch2
+    {
+      type 			wedge; 
+    }
 	
 }
-/*
-{
-    inlet
-    {
-        type            calculated;
-        value           uniform 0;
-    }
-
-    outlet
-    {
-        type            calculated;
-        value           uniform 0;
-    }
-
-    walls
-    {
-        type            calculated;
-        value           uniform 0;
-    }
-
-    frontBack
-    {
-        type            empty;
-    }
-}
-*/
 
 
 // ************************************************************************* //

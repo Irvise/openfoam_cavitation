@@ -47,7 +47,7 @@ adjustTimeStep  on;
 
 maxCo           0.5;
 
-maxAcousticCo   50;
+maxAcousticCo   100;
 
 libs (
 "libOpenFOAM.so"

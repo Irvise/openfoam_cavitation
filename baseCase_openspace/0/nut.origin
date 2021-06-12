@@ -21,66 +21,31 @@ internalField   uniform 0;
 
 boundaryField
 {
-    inlet
+  environment
     {
-        // type            calculated;
-        // value           uniform 0;
-      type zeroGradient; // Free stream
+      type zeroGradient;
     }
 
-    outlet
+  symmetric
     {
-        // type            calculated;
-        // value           uniform 0;
-      type zeroGradient; // Free stream
+      type symmetry;
     }
 
-    wall
+  axis
     {
-        // type            calculated;
-        // value           uniform 0;
-      type zeroGradient; // Free stream
+      type  empty;
     }
 
-    axis
+  wedgePatch1
     {
-        type            empty;
-    }
-
-    wedgePatch1
-    {
-        type            wedge;
+      type wedge;
     }
 	
-	wedgePatch2
-	{
-		type 			wedge; 
-	}
+  wedgePatch2
+    {
+      type wedge; 
+    }
 	
 }
-
-/*
-{
-    inlet
-    {
-        type            calculated;
-        value           uniform 0;
-    }
-    outlet
-    {
-        type            calculated;
-        value           uniform 0;
-    }
-    walls
-    {
-        type            nutkWallFunction;
-        value           uniform 0;
-    }
-    frontBack
-    {
-        type            empty;
-    }
-}
-*/
 
 // ************************************************************************* //

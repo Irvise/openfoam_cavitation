@@ -31,7 +31,7 @@ blocks
  // Block 1
  // See: https://cfd.direct/openfoam/user-guide/v8-mesh-description/#x24-1680005.1
  // Create tet with hex
- hex (3 2 1 3 0 0 0 0) (100 1 100) simpleGrading (1 1 0.1)
+ hex (3 2 1 3 0 0 0 0) (30 1 70) simpleGrading (1 1 0.05)
  // (points) (geometry) (grading)
  // (...) (num_of_radial depth volume) (how close to edge 0 3, , )
 );

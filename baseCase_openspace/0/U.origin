@@ -39,7 +39,7 @@ boundaryField
     Taken from: https://www.cfd-online.com/Forums/openfoam/145561-wavetransmissive-boundary-pressure-velocity.html
   */
   
-  inlet
+  environment
     {
       type waveTransmissive;
       gamma 1.1180345627243098; // PropsSI('C','P',100000,'Q',0,'Water') / PropsSI('Cvmass','P',100000,'Q',0,'Water')
@@ -47,38 +47,26 @@ boundaryField
       rho rho;
       psi psi;
       fieldInf uniform (0 0 0);
-    }
-    outlet
-      {
-      type waveTransmissive;
-      gamma 1.1180345627243098; // PropsSI('C','P',100000,'Q',0,'Water') / PropsSI('Cvmass','P',100000,'Q',0,'Water')
-      phi phi;
-      rho rho;
-      psi psi;
-      fieldInf uniform (0 0 0);
-      }
-    wall
-      {	
-      type waveTransmissive;
-      gamma 1.1180345627243098; // PropsSI('C','P',100000,'Q',0,'Water') / PropsSI('Cvmass','P',100000,'Q',0,'Water')
-      phi phi;
-      rho rho;
-      psi psi;
-      fieldInf uniform (0 0 0);
-      }
-    axis
-    {
-        type            empty;
     }
 
-    wedgePatch1
+  axis
     {
-        type            wedge;
+      type            empty;
+    }
+
+  wedgePatch1
+    {
+      type            wedge;
     }
 	
-    wedgePatch2
+  wedgePatch2
     {
-        type		wedge; 
+      type		wedge; 
+    }
+
+  symmetric
+    {
+      type symmetry;
     }
 	
 }

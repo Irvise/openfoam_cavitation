@@ -21,64 +21,33 @@ internalField   uniform 0; // The fluid is at stand still
 
 boundaryField
 {
-    inlet
+
+  symmetric
     {
-      type zeroGradient; // Free stream condition, static case.
-        // type            turbulentIntensityKineticEnergyInlet;
-        // intensity       0.05;
-        // value           uniform 0.05;
+      type symmetry;
     }
 
-    outlet
+  environment
     {
-        type            zeroGradient;
-        value           uniform 0;
+      type zeroGradient;
+    }
+  
+  axis
+    {
+      type empty;
     }
 
-    wall
+  wedgePatch1
     {
-      type zeroGradient; // Free stream condition, static case.
-        // type            kqRWallFunction;
-        // value           uniform 10;
-    }
-
-    axis
-    {
-        type            empty;
-    }
-
-    wedgePatch1
-    {
-        type            wedge;
+      type wedge;
     }
 	
-	wedgePatch2
-	{
-		type 			wedge; 
-	}
+  wedgePatch2
+    {
+      type wedge; 
+    }
 	
 }
 
-/*{
-    inlet
-    {
-        type            turbulentIntensityKineticEnergyInlet;
-        intensity       0.05;
-        value           uniform 0.05;
-    }
-    outlet
-    {
-        type            zeroGradient;
-    }
-    walls
-    {
-        type            kqRWallFunction;
-        value           uniform 10;
-    }
-    frontBack
-    {
-        type            empty;
-    }
-}
-*/
+
 // ************************************************************************* //

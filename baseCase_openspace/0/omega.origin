@@ -21,66 +21,30 @@ internalField   uniform 0; // Static case;
 
 boundaryField
 {
-    inlet
+  environment
     {
-      type zeroGradient; // Free stream condition, static case.
-        // type            turbulentMixingLengthFrequencyInlet;
-        // mixingLength    0.0005;
-        // k               k;
-        // value           uniform 77200;
+      type zeroGradient;
     }
 
-    outlet
+  symmetric
     {
-		type            zeroGradient;
+      type symmetry;
+    }
+  axis
+    {
+      type empty;
     }
 
-    wall
+  wedgePatch1
     {
-      type zeroGradient; // Free stream condition, static case.
-        // type            omegaWallFunction;
-        // value           uniform 77200;
-    }
-
-    axis
-    {
-        type            empty;
-    }
-
-    wedgePatch1
-    {
-        type            wedge;
+      type wedge;
     }
 	
-	wedgePatch2
-	{
-		type 			wedge; 
-	}
+  wedgePatch2
+    {
+      type wedge; 
+    }
 	
 }
-
-/*{
-    inlet
-    {
-        type            turbulentMixingLengthFrequencyInlet;
-        mixingLength    0.0005;
-        k               k;
-        value           uniform 77200;
-    }
-    outlet
-    {
-        type            zeroGradient;
-    }
-    walls
-    {
-        type            omegaWallFunction;
-        value           uniform 77200;
-    }
-    frontBack
-    {
-        type            empty;
-    }
-}
-*/
 
 // ************************************************************************* //

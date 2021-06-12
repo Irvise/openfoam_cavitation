@@ -20,70 +20,35 @@ internalField   uniform 997; // Irrelevant since it is being initialized by funk
 
 boundaryField
 {
- 
-	inlet
-	{
-        // type            fixedValue;
-        // value           uniform 845;
-	  type zeroGradient; // Free stream condition
+  symmetric
+    {
+      type symmetry;
+    }
 
-	} 	
+  environment
+    {
+      type fixedValue;
+      value uniform 997.2977;
+    }
+  
+  axis
+    {
+      type empty; 
 
-	outlet
-	{
-        // type            fixedValue;
-        // value           uniform 835;
-	  type zeroGradient; // Free stream condition
-	} 	
+    }
 
-	wall
-	{
-        type            zeroGradient;
-	}
+  wedgePatch1
+    {
+      type wedge; 
 
-	axis
-	{
-		type empty; 
-
-	}
-
-	wedgePatch1
-	{
-		type wedge; 
-
-	}
+    }
 	
-	wedgePatch2
-	{
-		type wedge; 
+  wedgePatch2
+    {
+      type wedge; 
 
-	}
+    }
 
 }
 
-/*
-{
-    inlet
-    {
-        type            fixedValue;
-        value           uniform 845;
-    }
-
-    outlet
-    {
-        type            fixedValue;
-        value           uniform 835;
-    }
-
-    walls
-    {
-        type            zeroGradient;
-    }
-
-    frontBack
-    {
-        type            empty;
-    }
-}
-*/
 // ************************************************************************* //
