@@ -16,7 +16,7 @@ defaultVariables
 (
     "bubbleRadius=3e-3;"
     "xPositionCenterPoint=0;"
-    "yPositionCenterPoint=2.5e-2;"
+    "yPositionCenterPoint=0;"
     "zPositionCenterPoint=0;"
 );
 
