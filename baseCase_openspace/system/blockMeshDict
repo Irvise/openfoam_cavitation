@@ -1,0 +1,121 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 1;
+ 
+vertices
+(
+    (0 0 0)					//Point0
+
+//    (0.00414 0 0.0949)	//Point1
+//    (-0.00414 0 0.0949) 	//Point2
+//    (0 1.2 0) 			//Point3
+//    (0.00414 1.2 0.0949) 	//Point4
+//    (-0.00414 1.2 0.0949)	//Point5
+
+    (0.00214 0 0.05)		//Point1
+    (-0.00214 0 0.05) 	//Point2	
+    (0 0.05 0) 			//Point3
+    (0.00214 0.05 0.05) 	//Point4
+    (-0.00214 0.05 0.05)	//Point5
+);
+ 
+blocks
+(
+
+	//Block 1		
+	hex (0 0 3 3 2 1 4 5) (1 40 100 ) simpleGrading (
+							 1
+							 // Center cells around the bubble
+							 (
+							  (0.25 0.15 0.66)
+							  (0.25 0.35 0.8)
+							  (0.25 0.35 1.25)
+							  (0.25 0.15 1.5)
+							  )
+							 10
+							 )
+
+);
+
+edges
+(
+// optional: define non-straight edges here
+);
+
+boundary
+(
+	inlet
+	{
+		type patch;
+		faces 
+		(	
+			(0 0 2 1)
+		);
+	} 	
+
+	outlet
+	{
+		type patch;
+		faces 
+		(	
+			(3 5 4 3)
+		);
+	} 	
+
+
+	wall
+	{
+		type wall; 
+		faces
+		(
+			(4 5 2 1)
+ 	
+		);
+	}
+
+	axis
+	{
+		type empty; 
+		faces
+		(
+			(0 3 3 0)
+ 	
+		);
+	}
+
+	wedgePatch1
+	{
+		type wedge; 
+		faces
+		(
+			(4 1 0 3)
+ 	
+		);
+	}
+	
+	wedgePatch2
+	{
+		type wedge; 
+		faces
+		(
+			(0 2 5 3)
+ 	
+		);
+	}
+
+
+);
