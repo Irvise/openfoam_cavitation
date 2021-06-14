@@ -1,0 +1,100 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volVectorField;
+    object      U;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 -1 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+
+    inlet
+      {
+	type freestream;
+	freestreamValue uniform (0 0 0);
+      }
+    outlet
+      {
+	type freestream;
+	freestreamValue uniform (0 0 0);
+      }
+    wall
+      {	
+	type freestream;
+	freestreamValue uniform (0 0 0);
+      }
+    axis
+    {
+        type            empty;
+    }
+
+    wedgePatch1
+    {
+        type            wedge;
+    }
+	
+    wedgePatch2
+    {
+        type		wedge; 
+    }
+	
+}
+  // Old setup.
+  /*  inlet
+    {
+        type	zeroGradient; // In this baseCase it is a freestream patch
+        value	uniform (0 0 0);
+    }
+
+    outlet
+    {
+        type	zeroGradient; // In this baseCase it is a freestream patch
+        value	uniform (0 0 0);
+    }
+
+    wall
+    {
+	type 	zeroGradient; // This patch is the "cylinder", in our case it is not a wall
+	value	uniform (0 0 0);
+    }
+*/
+/*
+{
+    inlet
+    {
+        type            zeroGradient;
+        value           uniform (0 0 0);
+    }
+
+    outlet
+    {
+        type            zeroGradient;
+        value           uniform (0 0 0);
+    }
+
+    walls
+    {
+        type            noSlip;
+    }
+
+    frontBack
+    {
+        type            empty;
+    }
+}
+*/
+
+// ************************************************************************* //
