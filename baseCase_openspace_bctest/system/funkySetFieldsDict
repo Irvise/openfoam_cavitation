@@ -1,0 +1,205 @@
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "";
+    case            "Imploding bubble";
+    instance        "system";
+    local           "";
+
+    class           dictionary;
+    object          funkySetFieldsDict;
+}
+
+defaultVariables
+(
+    "bubbleRadius=3e-3;"
+    "xPositionCenterPoint=0;"
+    "yPositionCenterPoint=0;"
+    "zPositionCenterPoint=0;"    
+    "instabilityThickness=0.1;"
+    "instabilityDeepness=0.20;"
+ 
+);
+
+
+expressions
+(
+//Definition of the variables 
+
+	ambientFluidp
+	{
+	
+		field p;
+		expression	"100000"; // 100_000 [Pa]
+		keepPatches true;
+	}
+	ambientFluidU
+	{
+		field U;
+		expression	"vector(0, 0, 0)";
+		keepPatches true;
+	}
+	ambientFluidalpha.vapour
+	{
+		field alpha.vapour;
+		expression	"0";
+		keepPatches true;
+	}
+	ambientFluidk
+	{
+		field k;
+		expression	"0";
+		keepPatches true;
+	}
+	ambientFluidomega
+	{
+		field omega;
+		expression	"0";
+		keepPatches true;
+	}
+	ambientFluidrho
+	{
+
+		field rho;
+		expression	"997.2987703166269"; // Rho at 100_000 [Pa] and T at 297.15 [K]
+		keepPatches true;
+    	}
+	ambientFluidnut
+	{
+		field nut;
+		expression	"0";
+		keepPatches true;
+    	}
+ 
+	bubblep
+	{
+		// import variables 
+		variables $defaultVariables;	
+		//setFields part	
+		field p;
+		expression	"2000"; // 2000 [Pa]
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
+		keepPatches true;
+    	}
+	bubbleU
+	{	
+		// import variables 
+		variables $defaultVariables;	
+		//setFields part
+		field U;
+		expression	"vector(0, 0, 0)";
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
+		keepPatches true; 
+    	}
+	bubblealpha.vapour
+	{ 	
+		// import variables 
+		variables $defaultVariables;	
+		//setFields part
+		field alpha.vapour;
+		expression	"1";
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
+		keepPatches true; 
+    	}
+	bubblek
+	{
+		// import variables 
+		variables $defaultVariables;	
+		//setFields part
+		field k;
+		expression	"0";
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
+		keepPatches true; 
+    	}
+	bubbleomega
+	{	
+		// import variables 
+		variables $defaultVariables;	
+		//setFields part
+		field omega;
+		expression	"0";
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
+		keepPatches true;
+    	}	
+	bubblerho
+	{	
+		// import variables 
+		variables $defaultVariables;	
+		//setFields part
+		field rho;
+		expression	"0.014598794912239475"; // Rho at 2000 [Pa] and T at 297.15 [K]
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
+		keepPatches true;   	
+
+	}
+	bubblenut
+	{	// import variables 
+		variables $defaultVariables;	
+		//setFields part
+		field nut;
+		expression	"0";
+		condition "pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0" ;
+		keepPatches true;   	
+
+	}
+	
+///////////////////////////////////////////////////////INSTABILITYTRIGGER//////////////////////////////////////////
+
+	instabilityTriggerP
+	{
+		variables $defaultVariables;				
+		field p;
+		expression	"100000"; // 100_000 [Pa]
+		condition 	" pos().z - pos().y*(1+instabilityThickness) < 0 && pos().z - pos().y*(1-instabilityThickness) > 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius*(1-instabilityDeepness),2) > 0 ";
+		keepPatches true;
+	}
+	instabilityTriggerambientFluidU
+	{	
+		variables $defaultVariables;	
+		field U;
+		expression	"vector(0, 0, 0)";
+		condition 	" pos().z - pos().y*(1+instabilityThickness) < 0 && pos().z - pos().y*(1-instabilityThickness) > 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius*(1-instabilityDeepness),2) > 0 ";
+		keepPatches true;
+	}
+	instabilityTriggerambientFluidalpha.vapour
+	{	variables $defaultVariables;	
+		field alpha.vapour;
+		expression	"0";
+		condition 	" pos().z - pos().y*(1+instabilityThickness) < 0 && pos().z - pos().y*(1-instabilityThickness) > 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius*(1-instabilityDeepness),2) > 0 ";
+		keepPatches true;
+	}
+	instabilityTriggerambientFluidk
+	{	
+		variables $defaultVariables;	
+		field k;
+		expression	"0";
+		condition 	" pos().z - pos().y*(1+instabilityThickness) < 0 && pos().z - pos().y*(1-instabilityThickness) > 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius*(1-instabilityDeepness),2) > 0 ";
+		keepPatches true;
+	}
+	instabilityTriggerambientFluidomega
+	{	
+		variables $defaultVariables;	
+		field omega;
+		expression	"0";
+		condition 	" pos().z - pos().y*(1+instabilityThickness) < 0 && pos().z - pos().y*(1-instabilityThickness) > 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius*(1-instabilityDeepness),2) > 0 ";
+		keepPatches true;
+	}
+	instabilityTriggerambientFluidrho
+	{
+		variables $defaultVariables;
+		field rho;
+		expression	"997.2987703166269"; // Rho at 100_000 [Pa] and T at 297.15 [K]
+		condition 	" pos().z - pos().y*(1+instabilityThickness) < 0 && pos().z - pos().y*(1-instabilityThickness) > 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius*(1-instabilityDeepness),2) > 0 ";
+		keepPatches true;
+    	}
+	instabilityTriggerambientFluidnut
+	{	
+		variables $defaultVariables;
+		field nut;
+		expression	"0";
+		condition 	" pos().z - pos().y*(1+instabilityThickness) < 0 && pos().z - pos().y*(1-instabilityThickness) > 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius*(1-instabilityDeepness),2) > 0 ";
+		keepPatches true;
+    	}
+);
