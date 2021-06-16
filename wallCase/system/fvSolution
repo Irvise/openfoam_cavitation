@@ -22,7 +22,7 @@ solvers
         solver          smoothSolver;
         smoother        symGaussSeidel;
         tolerance       1e-08;
-        relTol          0.1;
+        relTol          1e-5;
     }
 
     rhoFinal
@@ -30,14 +30,14 @@ solvers
         solver          smoothSolver;
         smoother        symGaussSeidel;
         tolerance       1e-08;
-        relTol          0;
+        relTol          1e-5;
     }
 
     p
     {
         solver          GAMG;
-        tolerance       0;
-        relTol          0.1;
+        tolerance       1e-07;
+        relTol          1e-5;
         smoother        GaussSeidel;
     }
 
@@ -67,7 +67,7 @@ solvers
 
 PIMPLE
 {
-    nCorrectors     3;
+    nCorrectors     5;
     nNonOrthogonalCorrectors 0;
 }
 
