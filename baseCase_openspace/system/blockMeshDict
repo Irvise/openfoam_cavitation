@@ -17,12 +17,12 @@ FoamFile
 vertices
 (
  (0 0 0)        	//Point 0
- (0.0013 0.05 0)     	//Point 1
- (-0.0013 0.05 0) // Point 2
+ (0.012 0.05 0)     	//Point 1
+ (-0.012 0.05 0) // Point 2
  (0 0 0.05) 		//Point 3
- (0.00065 0.03535534 0.03535534) // Point 4 Intermediate point for 3 1 (0) arc
+ (0.006 0.03535534 0.03535534) // Point 4 Intermediate point for 3 1 (0) arc
  // Other side. Angle of 3 degrees
- (-0.00065 0.03535534 0.03535534) // Point 5: Intermediate point for arc for other side
+ (-0.006 0.03535534 0.03535534) // Point 5: Intermediate point for arc for other side
  );
  
 blocks
@@ -38,8 +38,8 @@ blocks
 
 edges
 (
- arc 3 1 (0.00065 0.03535534 0.03535534)
- arc 3 2 (-0.00065 0.03535534 0.03535534)
+ arc 3 1 (0.006 0.03535534 0.03535534)
+ arc 3 2 (-0.006 0.03535534 0.03535534)
 );
 
 boundary
