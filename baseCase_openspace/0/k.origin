@@ -39,12 +39,12 @@ boundaryField
 
   wedgePatch1
     {
-      type wedge;
+      type	cyclicAMI;
     }
 	
   wedgePatch2
     {
-      type wedge; 
+      type	cyclicAMI;
     }
 	
 }

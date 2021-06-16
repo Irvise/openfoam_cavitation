@@ -8,9 +8,9 @@ application=$(getApplication)
 
 for i in 0/*.origin; do cp "$i" "${i%.origin}"; done
 
-runApplication blockMesh
-runApplication checkMesh
-runApplication funkySetFields -time 0
+#runApplication blockMesh
+#runApplication checkMesh
+#runApplication funkySetFields -time 0
 #runApplication decomposePar
 
 

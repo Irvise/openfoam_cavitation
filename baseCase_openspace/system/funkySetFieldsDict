@@ -14,7 +14,7 @@ FoamFile
 
 defaultVariables
 (
-    "bubbleRadius=8e-3;"
+    "bubbleRadius=3e-3;"
     "xPositionCenterPoint=0;"
     "yPositionCenterPoint=0;"
     "zPositionCenterPoint=0;"    
