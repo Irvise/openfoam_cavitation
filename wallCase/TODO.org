@@ -1,0 +1,55 @@
+* TODO In no particular order
+  1. Fine-tune or defend the turbulence model that is going to be used.
+  2. Configure the barotropic model.
+	a. What type do we use? At the beginning just go with Linear
+	b. What values do we use?
+  3. Check the transport properties. The skeleton is already there
+	 Suit them to our case. We could use CoolPROP to calculate the exact values.
+  4. Initial conditions?
+	a What do we use for initial pressure?				
+	b And densisty? For liquid watter, 1000kg/m3 should be good enough.
+  5. Refine the size of the problem and the bubble
+
+	  
+* Information on the decissions taken
+
+** Initial boundary conditions
+   - The velocity is 0, we start from an "equilibrium"
+   - The alpha of the liquid is 0, 1 for the bubble
+   - The k value at t=0 is 0, since the U_avg is also 0 (we do not have turbulence at the beginning anywhere
+   - Since k at t=0 is also 0, the values for epsilon, omega and nut are also 0
+#   - For the time being, the pressure for the bubble is going to be 0
+#   - For the time being the density for the liquid is set to 1000
+   - The initial Pressure and Temperature for the liquid are 100_000 [Pa] and 293 [K]
+   - The initial pressure for the bubble will be 2000 [Pa]
+   - The properties for the fluids are taken from the values above
+
+	Comments Ivan 31.05.2021
+ 
+	4a)	
+		-i asume we should calculate the pressure using the barotropic Compressibility model
+		website(where i got the equation):
+		https://caefn.com/openfoam/solvers-cavitatingfoam-v1812-barotropiccompressibilitymodel
+		see figure inside figures folder
+	
+		using the equation which i sent you in whatsapp we should by abel to calculate the right values.
+
+	 b) if we assume isentropic phase change(during the initialization of the bubble), for standard Temeperature of 273.15 K
+		the density would by 0.485 kg/ m³ (the calculated Presure should result ~ 6000 Pa (0.6kPa) . (approximatly).
+
+	PHD-Thesis: 
+	A Computational Study of the Inertial Collapse of Gas Bubbles Near a Rigid Surface by Shahaboddin Alahyari Beig
+
+	Based on the PHD-Tesis set up the following parameter:
+	
+ 	R0 = 100mym = 100*e-6 	m
+	~ we can disscuss the sourounding pressure value
+	p0 = 5 MPa  = 5*e6 		Pa
+
+	numberofcells/initialbubbleRadius = 192, ~for the Thesis this resultet in approx 0.5 billiion cells	
+
+	
+	1) & 5) i could do that if you could provide the DOI of the papaer which you mentioned is used also inside the lecture script
+   
+	
+	 
