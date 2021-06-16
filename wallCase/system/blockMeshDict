@@ -37,20 +37,8 @@ blocks
 (
 
 	//Block 1		
-	hex (0 0 3 3 2 1 4 5) (1 40 100 ) simpleGrading (
-							 1
-							 // Center cells around the bubble
-							 (
-							  (0.25 0.15 0.66)
-							  (0.25 0.35 0.8)
-							  (0.25 0.35 1.25)
-							  (0.25 0.15 1.5)
-							  )
-							 10
-							 )
-
+	hex (0 0 3 3 2 1 4 5) (1 40 100 ) simpleGrading (1 5 5)
 );
-
 edges
 (
 // optional: define non-straight edges here
