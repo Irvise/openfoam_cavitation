@@ -41,12 +41,7 @@ boundaryField
   
   inlet
     {
-      type waveTransmissive;
-      gamma 1.1180345627243098; // PropsSI('C','P',100000,'Q',0,'Water') / PropsSI('Cvmass','P',100000,'Q',0,'Water')
-      phi phi;
-      rho rho;
-      psi psi;
-      fieldInf uniform (0 0 0);
+      type noSlip;
     }
     outlet
       {
