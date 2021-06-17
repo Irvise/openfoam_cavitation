@@ -32,6 +32,10 @@ postProcessing/graphic
 # Compressed files
 *.tar.gz
 
+# animations
+*.ogv
+
+
 # Temporaries
 *.swp
 
