@@ -22,7 +22,7 @@ solvers
         solver          smoothSolver;
         smoother        symGaussSeidel;
         tolerance       1e-08;
-        relTol          1e-5;
+        relTol          1e-2;
     }
 
     rhoFinal
@@ -30,14 +30,14 @@ solvers
         solver          smoothSolver;
         smoother        symGaussSeidel;
         tolerance       1e-08;
-        relTol          1e-5;
+        relTol          1e-2;
     }
 
     p
     {
         solver          GAMG;
         tolerance       1e-07;
-        relTol          1e-5;
+        relTol          1e-2;
         smoother        GaussSeidel;
     }
 
@@ -45,7 +45,7 @@ solvers
     {
         $p;
         tolerance       1e-08;
-        relTol          0;
+        relTol          1e-2;
     }
 
     "(U|k|omega)"
@@ -53,7 +53,7 @@ solvers
         solver          smoothSolver;
         smoother        symGaussSeidel;
         tolerance       1e-08;
-        relTol          0.1;
+        relTol          1e-2;
     }
 
     "(U|k|omega)Final"
@@ -61,7 +61,7 @@ solvers
         solver          smoothSolver;
         smoother        symGaussSeidel;
         tolerance       1e-08;
-        relTol          0;
+        relTol          1e-2;
     }
 }
 
