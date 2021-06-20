@@ -18,8 +18,8 @@ defaultVariables
     "xPositionCenterPoint=0;"
     "yPositionCenterPoint=0;"
     "zPositionCenterPoint=0;"    
-    "instabilityThickness=0.1;"
-    "instabilityDeepness=0.20;"
+//    "instabilityThickness=0.1;"
+//    "instabilityDeepness=0.20;"
  
 );
 
@@ -146,7 +146,7 @@ expressions
 	}
 	
 ///////////////////////////////////////////////////////INSTABILITYTRIGGER//////////////////////////////////////////
-
+/*
 	instabilityTriggerP
 	{
 		variables $defaultVariables;				
@@ -202,4 +202,5 @@ expressions
 		condition 	" pos().z - pos().y*(1+instabilityThickness) < 0 && pos().z - pos().y*(1-instabilityThickness) > 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius,2) < 0 && pow(pos().x-xPositionCenterPoint,2) + pow(pos().y-yPositionCenterPoint,2) + pow(pos().z-zPositionCenterPoint,2)-pow(bubbleRadius*(1-instabilityDeepness),2) > 0 ";
 		keepPatches true;
     	}
+*/
 );
