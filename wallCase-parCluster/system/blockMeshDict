@@ -37,7 +37,7 @@ blocks
 (
 
 	//Block 1		
-	hex (0 0 3 3 2 1 4 5) (1 150 150 ) simpleGrading (1 5 5)
+	hex (0 0 3 3 2 1 4 5) (1 750 750 ) simpleGrading (1 5 5)
 );
 edges
 (
