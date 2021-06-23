@@ -1,3 +1,4 @@
 ./Allclean
 ./Allrun
-mpirun --hostfile machines -np 4 cavitatingFoam -parallel > log.cavitatingFoam
+ 
+mpirun --use-hwthread-cpus -np 4 cavitatingFoam -parallel>log.cavitatingFoam
