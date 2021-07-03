@@ -1,3 +1,0 @@
-./Allclean
-./Allrun
-mpirun --hostfile machines -np 4 cavitatingFoam -parallel > log.cavitatingFoam
