@@ -24,6 +24,23 @@
    - The initial pressure for the bubble will be 2000 [Pa]
    - The properties for the fluids are taken from the values above
 
+
+*** Distance bubble centerPoint-wall 
+Source : https://www.youtube.com/watch?v=ZaB5B3pec-A
+	
+	The inner world of a collapsing bubble, O.Supponen, P.Kobel, M.Farhat
+	Ecole Polytechnique Federale de lausanne
+gamma 	=  distance bubbleCenterPoint/ maxBubbleRadius = 1/0.56
+
+for our case this resultet in the following Values 
+ 	
+	s 	=	0.0053571428
+	Rmax	=	3e-3
+
+
+
+
+
 	Comments Ivan 31.05.2021
  
 	4a)	

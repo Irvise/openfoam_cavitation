@@ -17,25 +17,7 @@ FoamFile
 
 numberOfSubdomains 6;
 
-method          simple;
-
-simpleCoeffs
-{
-    n               ( 1 2 3 );
-    delta           0.001;
-}
-
-hierarchicalCoeffs
-{
-    n               ( 1 1 1 );
-    delta           0.001;
-    order           xyz;
-}
-
-manualCoeffs
-{
-    dataFile        "";
-}
+method          scotch;
 
 distributed     no;
 

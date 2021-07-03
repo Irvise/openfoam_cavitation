@@ -10,29 +10,49 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    location    "constant";
-    object      transportProperties;
+    location    "system";
+    object      controlDict;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-mul             [1 -1 -1 0 0] 0.0065;
+application     cavitatingFoam;
 
-muv             [1 -1 -1 0 0] 5.953e-06;
+startFrom       latestTime;
 
-phases (vapour water);
+startTime       0;
 
-water
-{
-    transportModel  Newtonian;
-    nu              [0 2 -1 0 0 0 0] 9.131485434e-07; // V = 0.0009106819194523486 [Pa s] / 997.2987703166269 [kg/m3]
-    rho             [1 -3 0 0 0 0 0] 997.2987703166269;
-}
+stopAt          endTime;
 
-vapour
-{
-    transportModel  Newtonian;
-    nu              [0 2 -1 0 0 0 0] 0.0006625147018764871; // V = 9.671916259038312e-06 [Pa s]
-    rho             [1 -3 0 0 0 0 0] 0.014598794912239475;
-}
+endTime         0.0005;
 
+deltaT          1e-09;
+
+writeControl    adjustableRunTime;
+
+writeInterval   0.000001;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression on;
+
+timeFormat      general;
+
+runTimeModifiable yes;
+
+adjustTimeStep  on;
+
+maxCo           0.5;
+
+maxAcousticCo   10;
+
+libs (
+"libOpenFOAM.so"
+"libsimpleSwakFunctionObjects.so"
+"libswakFunctionObjects.so"
+"libgroovyBC.so"
+);
 // ************************************************************************* //

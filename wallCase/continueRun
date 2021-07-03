@@ -1,0 +1,1 @@
+mpirun --use-hwthread-cpus -np 6 cavitatingFoam -parallel > log.cavitatingFoam
