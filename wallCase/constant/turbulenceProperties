@@ -15,8 +15,8 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-simulationType  laminar;
-/*
+simulationType  RAS;
+
 RAS
 {
     RASModel        kOmegaSST;
@@ -25,6 +25,6 @@ RAS
 
     printCoeffs     on;
 }
-*/
+
 
 // ************************************************************************* //

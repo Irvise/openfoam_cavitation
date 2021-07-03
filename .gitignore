@@ -8,6 +8,9 @@ log.*
 # Geometry files
 **/polyMesh
 
+# avi files
+*.avi
+
 # Postprocessing files
 postProcessing/data/data 
 postProcessing/graphic

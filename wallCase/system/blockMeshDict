@@ -37,7 +37,21 @@ blocks
 (
 
 	//Block 1		
-	hex (0 0 3 3 2 1 4 5) (1 150 150 ) simpleGrading (1 5 5)
+	hex (0 0 3 3 2 1 4 5) (1 500 500 ) simpleGrading (
+		1
+		// Y direction
+		(
+		(0.25 60 1)
+		(0.25 30 2)
+		(0.5 10 6)
+		)
+		// Z direction
+		(
+		(0.25 60 1)
+		(0.25 30 2)
+		(0.5 10 6)
+		)
+	)
 );
 edges
 (

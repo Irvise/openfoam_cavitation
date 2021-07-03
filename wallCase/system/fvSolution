@@ -22,22 +22,22 @@ solvers
         solver          smoothSolver;
         smoother        symGaussSeidel;
         tolerance       1e-08;
-        relTol          1e-2;
+        relTol          0.001;
     }
 
     rhoFinal
     {
-        solver          smoothSolver;
+         solver          smoothSolver;
         smoother        symGaussSeidel;
         tolerance       1e-08;
-        relTol          1e-2;
+        relTol          0;
     }
 
     p
     {
         solver          GAMG;
-        tolerance       1e-07;
-        relTol          1e-2;
+        tolerance       1e-10;
+        relTol          0.0001;
         smoother        GaussSeidel;
     }
 
@@ -45,15 +45,15 @@ solvers
     {
         $p;
         tolerance       1e-08;
-        relTol          1e-2;
+        relTol          0;
     }
 
     "(U|k|omega)"
     {
         solver          smoothSolver;
         smoother        symGaussSeidel;
-        tolerance       1e-08;
-        relTol          1e-2;
+        tolerance       1e-09;
+        relTol          0.01;
     }
 
     "(U|k|omega)Final"
@@ -61,14 +61,15 @@ solvers
         solver          smoothSolver;
         smoother        symGaussSeidel;
         tolerance       1e-08;
-        relTol          1e-2;
+        relTol          0;
     }
 }
 
 PIMPLE
 {
-    nCorrectors     5;
-    nNonOrthogonalCorrectors 0;
+    nCorrectors     4;
+    nNonOrthogonalCorrectors 1;
+    nOuterCorrectors 3;
 }
 
 relaxationFactors
