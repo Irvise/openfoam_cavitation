@@ -115,7 +115,7 @@ plot(p_center(:,1),p_center(:,4)/ambientPressure,'b')
 plot(p_center(:,1),p_stimated_sliced(:,3),'b--')
 
 title('Comparison between Rayleigh-Plesset and Simulation. Normalized pressure')
-legend('Radius =  7.07e-3','Radius =  2.12e-2','Radius =  4.71e-2' )
+legend('Radius =  7.07e-3', "" ,'Radius =  2.12e-2', "",'Radius =  4.71e-2', "")
 xlabel('Time [s]')
 ylabel('p/po [-]')
 
